@@ -1,0 +1,35 @@
+﻿@page "/"
+
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Index</PageTitle>
+
+<div id="spreadsheet" @ref="spreadsheetElem" ></div>
+
+@code{
+    ElementReference spreadsheetElem;
+
+    List<Order> orders = new List<Order>
+    {
+        new Order { OrderID = 10001, OrderDate = "12/16/2021", ShipAddress = "Kirchgasse 6", ShipCity ="Berlin", ShipCountry = "Denmark" },
+        new Order { OrderID = 10002, OrderDate = "12/16/2021", ShipAddress = "Avda. Azteca 123", ShipCity ="Madrid", ShipCountry = "Brazil" },
+        new Order { OrderID = 10003, OrderDate = "12/17/2021", ShipAddress = "Carrera 52 con Ave. Bolívar #65-98 Llano Largo", ShipCity ="Cholchester", ShipCountry = "Germany" },
+        new Order { OrderID = 10004, OrderDate = "12/18/2021", ShipAddress = "Magazinweg 7", ShipCity ="Marseille", ShipCountry = "Austria" },
+        new Order { OrderID = 10005, OrderDate = "12/20/2021", ShipAddress = "1029 - 12th Ave. S.", ShipCity ="Tsawassen", ShipCountry = "Switzerland" }
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("RenderSpreadsheet", spreadsheetElem, orders);
+    }
+
+    public class Order
+    {
+        public int? OrderID { get; set; }
+        public string OrderDate { get; set; }
+        public string ShipAddress { get; set; }
+        public string ShipCity { get; set; }
+        public string ShipCountry { get; set; }
+    }
+}
+
