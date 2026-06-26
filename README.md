@@ -1,6 +1,6 @@
 # Add a JavaScript Spreadsheet Component in a Blazor Server App
 
-This repository demonstrates how to integrate a JavaScript Spreadsheet component into a Blazor Server application targeting .NET 6. The sample shows how to reference the Spreadsheet’s JavaScript and CSS assets, initialize it using JavaScript interop, and render it on a Razor page. While the example is aligned with the Syncfusion EJ2 JavaScript Spreadsheet loaded via CDN for convenience, the overall approach works with other JavaScript spreadsheet libraries as well. The goal is to help you understand where to place assets, how to structure initialization, and how to keep the component lifecycle clean in a Blazor Server context.
+This repository demonstrates how to integrate a [JavaScript Spreadsheet](https://www.syncfusion.com/spreadsheet-editor-sdk/javascript-spreadsheet-editor) component into a Blazor Server application targeting .NET 6. The sample shows how to reference the Spreadsheet’s JavaScript and CSS assets, initialize it using JavaScript interop, and render it on a Razor page. While the example is aligned with the EJ2 JavaScript Spreadsheet loaded via CDN for convenience, the overall approach works with other JavaScript spreadsheet libraries as well. The goal is to help you understand where to place assets, how to structure initialization, and how to keep the component lifecycle clean in a Blazor Server context.
  
 Note: If you use a commercial component, make sure to review and comply with its licensing terms.
 
@@ -16,7 +16,7 @@ A .NET 6 Blazor Server application that:
 ## Tech Stack
 
 - **.NET 6 (Blazor Server)**: Core framework for the application.
-- **JavaScript Spreadsheet Library**: Example uses Syncfusion EJ2; adaptable to other libraries.
+- **JavaScript Spreadsheet Library**: Example uses EJ2; adaptable to other libraries.
 - **JavaScript Interop (`IJSRuntime`)**: Enables communication between Blazor and JavaScript.
 
 ## Prerequisites
